@@ -17,7 +17,7 @@ export default function Home() {
         ""
       )}
 
-      <SongCard songs={songs} />
+      {songs.length === 0 ? "" : <SongCard songs={songs} />}
     </>
   );
 }

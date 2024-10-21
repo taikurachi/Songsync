@@ -74,6 +74,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  min-height: 293px;
 }
 @media screen and (max-width: 1020px) {
   .eventsGridContainer {
@@ -95,8 +96,6 @@
 .eventsDate {
   border-radius: 10px;
   text-align: center;
-  /* width: clamp(min-content, 80px, 100px);
-   */
   width: 80px;
   padding: 10px;
   background-color: #9963ff;
@@ -119,4 +118,21 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.songChangeBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.songChangeBtn:hover {
+  background-color: #b6b6b6;
 }

@@ -1,7 +1,6 @@
 import styles from "../page.module.css";
 import Image from "next/image";
 export default function SongContainer({ currentSong }) {
-  console.log(currentSong);
   const songData = {
     artists: currentSong.track.artists.map((artist) => artist.name).join(", "),
     imageUrl: currentSong.track.album.images[2].url,
@@ -21,6 +20,7 @@ export default function SongContainer({ currentSong }) {
               className={styles.songImage}
               width={50}
               height={50}
+              alt="image"
             />
           </div>
           <div className={styles.songDetails}>
