@@ -6,17 +6,34 @@ import spotifyImage from "../public/images/spotify.svg";
 import ticketmasterImage from "../public/images/ticketmaster.png";
 import SongChangeBtn from "./SongChangeBtn";
 import { useEffect, useState } from "react";
+import ColorThief from "colorthief";
+import getColorPalette from "../utils/getColorPalette";
+import Arrow from "./Arrow";
 
 export default function SongCard({ songs }) {
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [artistName, setArtistName] = useState("");
   const [artistIndex, setArtistIndex] = useState(0);
   const [songIndex, setSongIndex] = useState(0);
+  const [color, setColor] = useState([]);
 
+  const setDominantColor = (url) => {
+    if (url) {
+      const img = new window.Image();
+      img.src = url;
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const colorThief = new ColorThief();
+        const color = colorThief.getColor(img);
+        setColor(color);
+      };
+    }
+  };
   useEffect(() => {
     if (songs && songs.length > 0) {
       const currentSong = songs[songIndex];
-      console.log(currentSong);
+      const imageUrl = currentSong.track?.album.images[2].url;
+      setDominantColor(imageUrl);
       setCurrentSong(currentSong);
       setArtistIndex(0);
       const artists = currentSong.track?.artists ?? [];
@@ -54,10 +71,18 @@ export default function SongCard({ songs }) {
         </div>
 
         <div onClick={handleArtistChange} className={styles.songCard}>
-          <h1 className={styles.cardTitle}>Recently played song:</h1>
+          <h1 className={styles.cardTitle}>
+            Recently played song
+            <span style={{ color: `rgba(${getColorPalette(color, 1)})` }}>
+              :
+            </span>
+          </h1>
           <SongContainer currentSong={currentSong} />
-          <h2>{artistName}'s upcoming concerts</h2>
-          <EventContainer artistName={artistName} />
+          <h2 className={styles.concertsHeader}>
+            {artistName}'s upcoming concerts{" "}
+            <Arrow width={15} color={`rgba(${getColorPalette(color, 1)})`} />
+          </h2>
+          <EventContainer artistName={artistName} color={color} />
           <p className={styles.credits}>
             <span>Powered</span>
             <span>by</span>

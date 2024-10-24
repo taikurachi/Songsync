@@ -70,6 +70,12 @@
   color: var(--secondary-font-color);
 }
 
+.concertsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .eventsGridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
