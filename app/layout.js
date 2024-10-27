@@ -2,17 +2,17 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const outfitBold = localFont({
-  src: "./fonts/Outfit-Bold.ttf",
+  src: "/fonts/Outfit-Bold.ttf",
   variable: "--font-outfit-bold",
 });
 
 const outfitRegular = localFont({
-  src: "./fonts/Outfit-Regular.ttf",
+  src: "/fonts/Outfit-Regular.ttf",
   variable: "--font-outfit-regular",
 });
 
 const outfitSemiBold = localFont({
-  src: "./fonts/Outfit-SemiBold.ttf",
+  src: "/fonts/Outfit-SemiBold.ttf",
   variable: "--font-outfit-semiBold",
 });
 
