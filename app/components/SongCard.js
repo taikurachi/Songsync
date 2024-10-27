@@ -63,14 +63,30 @@ export default function SongCard({ songs }) {
       <div>
         <div className={styles.btnContainer}>
           <SongChangeBtn onClick={() => handleSongChange("previous")}>
+            <Arrow
+              direction={"left"}
+              width={10}
+              color={`rgba(${getColorPalette(color, 1)})`}
+            />
             View previous
+          </SongChangeBtn>
+          <SongChangeBtn
+            onClick={handleArtistChange}
+            backgroundColor={`rgba(${getColorPalette(color, 0.5)})`}
+          >
+            Change artist
           </SongChangeBtn>
           <SongChangeBtn onClick={() => handleSongChange("next")}>
             View next
+            <Arrow
+              direction={"right"}
+              width={10}
+              color={`rgba(${getColorPalette(color, 1)})`}
+            />
           </SongChangeBtn>
         </div>
 
-        <div onClick={handleArtistChange} className={styles.songCard}>
+        <div className={styles.songCard}>
           <h1 className={styles.cardTitle}>
             Recently played song
             <span style={{ color: `rgba(${getColorPalette(color, 1)})` }}>
@@ -80,7 +96,11 @@ export default function SongCard({ songs }) {
           <SongContainer currentSong={currentSong} />
           <h2 className={styles.concertsHeader}>
             {artistName}'s upcoming concerts{" "}
-            <Arrow width={15} color={`rgba(${getColorPalette(color, 1)})`} />
+            <Arrow
+              direction={"down"}
+              width={15}
+              color={`rgba(${getColorPalette(color, 1)})`}
+            />
           </h2>
           <EventContainer artistName={artistName} color={color} />
           <p className={styles.credits}>

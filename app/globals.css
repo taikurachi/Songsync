@@ -47,3 +47,10 @@ li {
 :root {
   --secondary-font-color: #554d4d;
 }
+
+@media screen and (max-width: 1020px) {
+  body {
+    background-color: #d9d9d9;
+    display: block;
+  }
+}

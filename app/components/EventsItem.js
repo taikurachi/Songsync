@@ -18,7 +18,7 @@ export default function EventsItem({ event, color }) {
     minute: "2-digit",
     hour12: true,
   });
-  const city = eventLocationInfo?.city.name;
+  const city = eventLocationInfo?.city?.name;
   const venue = eventLocationInfo?.name;
   const colorPalette = `rgba(${getColorPalette(color, 0.5)})`;
   const textColorLuminance = checkLuminance(color) < 0.3 ? "#fff" : "#000";

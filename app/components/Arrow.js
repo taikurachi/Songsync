@@ -1,10 +1,18 @@
-export default function Arrow({ width, color }) {
+export default function Arrow({ width, color, direction }) {
+  const rotationAmount = {
+    down: 0,
+    right: "-90deg",
+    left: "90deg",
+    up: "180deg",
+  };
+
   return (
     <svg
       width={width}
       height={Math.floor(width * 1.76)}
       viewBox="0 0 21 37"
       stroke={color}
+      style={{ transform: `rotate(${rotationAmount[direction]})` }}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
