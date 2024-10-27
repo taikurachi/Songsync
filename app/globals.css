@@ -6,20 +6,20 @@
 
 @font-face {
   font-family: "Outfit-regular";
-  src: url("/fonts/Outfit-Regular.ttf") format("truetype");
+  src: url("fonts/Outfit-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Outfit-bold";
-  src: url("/fonts/Outfit-Bold.ttf") format("truetype");
+  src: url("fonts/Outfit-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Outfit-semiBold";
-  src: url("/fonts/Outfit-semiBold.ttf") format("truetype");
+  src: url("fonts/Outfit-semiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

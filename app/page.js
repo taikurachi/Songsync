@@ -1,5 +1,4 @@
 "use client";
-import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import AuthScreen from "./components/AuthScreen";
 import useSpotifyAuth from "./hooks/useSpotifyAuth";
