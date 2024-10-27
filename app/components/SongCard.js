@@ -95,7 +95,7 @@ export default function SongCard({ songs }) {
           </h1>
           <SongContainer currentSong={currentSong} />
           <h2 className={styles.concertsHeader}>
-            {artistName}'s upcoming concerts{" "}
+            {`${artistName}'s upcoming concerts`}
             <Arrow
               direction={"down"}
               width={15}

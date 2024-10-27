@@ -14,7 +14,7 @@ export default function AuthScreen({ token, logout, setSongs }) {
 
       getRecentlyPlayed();
     }
-  }, [token]);
+  }, [token, setSongs]);
 
   return (
     <div className={styles.authScreen}>
