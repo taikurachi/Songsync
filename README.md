@@ -1,3 +1,4 @@
 # Recently played song & artist tickets display
 
-<img width="744" alt="Screenshot 2024-10-19 at 10 18 11 PM" src="https://github.com/user-attachments/assets/c21e8809-ab70-4031-8bdd-3c50edeeb88a">
+https://github.com/user-attachments/assets/e5965de5-a5e0-41a8-b356-46398f1b2768
+
