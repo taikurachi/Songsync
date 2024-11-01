@@ -28,29 +28,18 @@ a {
   text-decoration: none;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100dvh;
+  background-color: #d9d9d9;
   font-family: "Outfit-regular", sans-serif;
 }
-h1 {
+h1,
+h2 {
   font-family: "Outfit-bold", sans-serif;
 }
-h2 {
-  font-family: "Outfit-semiBold", sans-serif;
-}
+
 li {
   color: black;
 }
 
 :root {
   --secondary-font-color: #554d4d;
-}
-
-@media screen and (max-width: 1020px) {
-  body {
-    background-color: #d9d9d9;
-    display: block;
-  }
 }

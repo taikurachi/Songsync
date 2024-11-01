@@ -11,13 +11,17 @@ export default function EventsItem({ event, color }) {
     month: "short",
     day: "2-digit",
   });
-  const time = new Date(
-    `1970-01-01T${event.dates.start.localTime}`
-  ).toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
+  const time = event.dates.start.localTime
+    ? new Date(`1970-01-01T${event.dates.start.localTime}`).toLocaleTimeString(
+        "en-US",
+        {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        }
+      )
+    : "";
+
   const city = eventLocationInfo?.city?.name;
   const venue = eventLocationInfo?.name;
   const colorPalette = `rgba(${getColorPalette(color, 0.5)})`;

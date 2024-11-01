@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const { artistName } = req.query;
-  const apiKey = process.env.TICKETMASTER_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_TICKETMASTER_API_KEY;
   if (!apiKey) {
     console.error("API Key is missing");
     return res.status(500).json({ error: "API Key is missing" });
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const response = await fetch(
       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&keyword=${encodeURIComponent(
         artistName
-      )}&size=4`
+      )}&size=8`
     );
     if (!response.ok) {
       throw new Error(`Error fetching events: ${response.statusText}`);

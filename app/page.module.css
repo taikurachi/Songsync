@@ -1,3 +1,11 @@
+.songSyncLayout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  height: 100dvh;
+  max-height: 900px;
+}
+
 .authScreen {
   display: flex;
   flex-direction: column;
@@ -16,24 +24,44 @@
 
 .songCard {
   display: flex;
-  width: 900px;
-  flex-direction: column;
+  flex: 2;
   padding: 20px;
+  flex-direction: column;
   gap: 2rem;
-  border-radius: 10px;
-  background-color: #d9d9d9;
+  border-radius: 20px;
+  background-color: #ffffff;
 }
 
 .cardTitle {
   font-size: 2rem;
 }
+.songContainer.small {
+  padding: 6px 10px;
 
+  .songTitle {
+    font-size: clamp(0.6rem, 4vw, 0.8rem);
+  }
+  .songArtist {
+    font-size: clamp(0.3rem, 3vw, 0.6rem);
+  }
+
+  .songAlbum {
+    font-size: clamp(0.3rem, 3vw, 0.6rem);
+  }
+  .songLeftCol {
+    gap: 10px;
+  }
+}
 .songContainer {
   border-radius: 10px;
   padding: 10px 20px;
-  background-color: #b6b6b6;
+  background-color: #e0e0e0;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
 }
-
+.songContainer:hover {
+  background-color: rgb(209, 217, 225);
+}
 .songTitle {
   font-size: clamp(1rem, 5vw, 1.3rem);
   font-family: "Outfit-semiBold", sans-serif;
@@ -65,9 +93,10 @@
   color: var(--secondary-font-color);
 }
 
-.songAlbum {
-  font-size: clamp(0.8rem, 5vw, 1.1rem);
-  color: var(--secondary-font-color);
+.songHistoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .concertsHeader {
@@ -77,6 +106,7 @@
 }
 
 .eventsGridContainer {
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -85,11 +115,11 @@
 
 .eventsItem {
   max-width: 100%;
-  padding: clamp(12px, 4%, 20px);
+  padding: clamp(6px, 4%, 8px) 12px;
   background-color: #bf9dff;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   border-radius: 10px;
 }
 
@@ -99,18 +129,18 @@
   width: 80px;
   padding: 10px;
   background-color: #9963ff;
-  font-size: clamp(0.8rem, 3vw, 1.8rem);
+  font-size: clamp(0.8rem, 4vw, 1.6rem);
   font-family: "Outfit-semiBold", sans-serif;
 }
 
 .eventsCity {
-  font-size: clamp(1.2rem, 5vw, 1.4rem);
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
   font-family: "Outfit-semiBold", sans-serif;
 }
 
 .eventsTimeVenue {
   font-size: clamp(0.8rem, 5vw, 1rem);
-  margin-top: 10px;
+  margin-top: clamp(2px, 3vw, 8px);
   color: #474747;
 }
 
@@ -141,7 +171,64 @@
   background-color: #b6b6b6;
 }
 
+.songRightCol {
+  flex-basis: 29vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileDetails {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.profileDetailsHeader {
+  font-family: "Outfit-semiBold", sans-serif;
+}
+.profileDetailsAnswer {
+  padding: 10px;
+  font-size: 2rem;
+  font-family: "Outfit-semiBold", sans-serif;
+  background-color: darkgray;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 10px 0px;
+}
+.listeningHistory {
+  background-color: #fff;
+  border-radius: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.logoutBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: auto;
+  border: none;
+  width: fit-content;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-family: "Outfit-regular", sans-serif;
+}
+
+.logoutBtn:hover {
+  background-color: #474747;
+  color: white;
+}
 @media screen and (max-width: 1020px) {
+  .songSyncLayout {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+  .songRightCol {
+    max-width: none;
+  }
   .eventsGridContainer {
     grid-template-columns: 1fr;
   }
@@ -164,5 +251,15 @@
   }
   .btnContainer {
     padding: 20px 20px 0px 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .songSyncLayout {
+    gap: 10px;
+    padding: 10px;
+  }
+  .songRightCol {
+    gap: 10px;
   }
 }
