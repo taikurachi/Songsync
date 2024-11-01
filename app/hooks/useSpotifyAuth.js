@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 
 export default function useSpotifyAuth() {
   const [token, setToken] = useState(() =>
-    window.localStorage.getItem("token")
+    typeof window !== "undefined" ? window.localStorage.getItem("token") : ""
   );
   const [refreshToken, setRefreshToken] = useState(() =>
-    window.localStorage.getItem("refresh_token")
+    typeof window !== "undefined"
+      ? window.localStorage.getItem("refresh_token")
+      : ""
   );
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
     const expiration = window.localStorage.getItem("token_expiration");
