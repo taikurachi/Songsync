@@ -28,29 +28,15 @@ export default function useSpotifyAuth() {
       setToken(token);
       setRefreshToken(refreshToken);
     } else if (expiration && Date.now() > expiration) {
-      console.log("Refresh token:", refreshToken);
       refreshAccessToken(refreshToken);
     }
   }, [refreshToken]);
 
-  // Function to refresh the access token using the refresh token
   const refreshAccessToken = async (refreshToken) => {
-    const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
-    const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
-    const basicAuth = btoa(`${clientId}:${clientSecret}`);
-
     try {
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Basic ${basicAuth}`,
-        },
-        body: new URLSearchParams({
-          grant_type: "refresh_token",
-          refresh_token: refreshToken,
-        }),
-      });
+      const response = await fetch(
+        `/api/refresh-token?refresh_token=${refreshToken}`
+      );
 
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
