@@ -1,24 +1,25 @@
-export const fetchRecentlyPlayed = async (token) => {
+export const fetchRecentlyPlayed = async (accessToken) => {
   try {
-    console.log(token, "fetch recently played");
     const response = await fetch(
-      "https://api.spotify.com/v1/me/player/recently-played?limit=5",
+      "https://api.spotify.com/v1/me/player/recently-played?limit=50",
       {
-        method: "GET",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       }
     );
 
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status}`);
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.error(
+        "Failed to fetch songs:",
+        response.status,
+        response.statusText
+      );
     }
-
-    const data = await response.json();
-    return data;
   } catch (error) {
-    console.error("Error fetching recently played tracks:", error);
-    return null;
+    console.error("Error fetching songs:", error);
   }
 };

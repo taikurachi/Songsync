@@ -96,7 +96,13 @@
 .songHistoryContainer {
   display: flex;
   flex-direction: column;
+  height: 320px;
+  overflow: scroll;
   gap: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+.songHistoryContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .concertsHeader {
@@ -129,7 +135,7 @@
   width: 80px;
   padding: 10px;
   background-color: #9963ff;
-  font-size: clamp(0.8rem, 4vw, 1.6rem);
+  font-size: clamp(0.8rem, 4vw, 1.4rem);
   font-family: "Outfit-semiBold", sans-serif;
 }
 

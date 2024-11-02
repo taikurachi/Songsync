@@ -2,6 +2,7 @@ import Image from "next/image";
 import spotifyImage from "../public/images/spotify.svg";
 import ticketmasterImage from "../public/images/ticketmaster.png";
 import styles from "../page.module.css";
+
 export default function Footer() {
   return (
     <p className={styles.credits}>
