@@ -23,9 +23,10 @@ export default function SongContainer({
             ? currentSong.track.album.name.slice(0, 10) + "..."
             : currentSong.track.album.name) || "Unknown Album",
         id: currentSong.track.id || "Unknown id",
+        songUrl: currentSong.track.external_urls.spotify,
       }
     : null;
-
+  console.log(currentSong);
   return (
     <>
       {songData ? (
@@ -48,6 +49,8 @@ export default function SongContainer({
                   width={size === "small" ? 30 : 50}
                   height={size === "small" ? 40 : 50}
                   alt="image"
+                  title="Open in Spotify"
+                  onClick={() => window.open(songData.songUrl, "_blank")}
                 />
               </div>
               <div className={styles.songDetails}>

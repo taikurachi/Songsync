@@ -226,6 +226,22 @@
   background-color: #474747;
   color: white;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerLinks {
+  display: flex;
+  gap: 10px;
+}
+.links {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #6e6e6e;
+}
+
 @media screen and (max-width: 1020px) {
   .songSyncLayout {
     flex-direction: column;
