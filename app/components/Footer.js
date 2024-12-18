@@ -23,6 +23,9 @@ export default function Footer() {
           className={styles.creditsImg}
         />
       </p>
+      <Link className={styles.spotifyLink} href="https://open.spotify.com/">
+        OPEN SPOTIFY
+      </Link>
       <div className={styles.footerLinks}>
         <Link className={styles.links} href="/privacy">
           Privacy notice

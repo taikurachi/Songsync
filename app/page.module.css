@@ -236,6 +236,13 @@
   display: flex;
   gap: 10px;
 }
+.spotifyLink {
+  background-color: lightgray;
+  cursor: pointer;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
 .links {
   text-decoration: underline;
   cursor: pointer;
