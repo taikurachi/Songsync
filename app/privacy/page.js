@@ -42,7 +42,7 @@ export default function Privacy() {
         <p>
           We take the security of your data seriously. We do not store your
           Spotify credentials. Authentication is handled directly through
-          Spotify's secure OAuth process.
+          Spotify&apos;s secure OAuth process.
         </p>
       </section>
 
